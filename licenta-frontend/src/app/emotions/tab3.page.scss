@@ -1,0 +1,78 @@
+ion-avatar {
+  --ion-avatar-width: 50px;
+  --ion-avatar-height: 50px;
+}
+
+ion-label {
+  padding-left: 10px;
+  color: #ffffff;  /* Set label text to white */
+}
+
+ion-header {
+  --background: #3880ff;
+  --color: #ffffff;
+}
+
+ion-title {
+  font-weight: bold;
+}
+
+ion-content {
+  --background: #000000;  /* Set content background to black */
+  color: #ffffff;  /* Set default text color to white */
+}
+
+ion-item {
+  --background: #1c1c1c;  /* Set item background to dark grey */
+  --color: #ffffff;  /* Set item text to white */
+  margin: 8px 0;
+  border-radius: 8px;
+}
+
+ion-input {
+  --color: #ffffff;  /* Set input text to white */
+}
+
+ion-button {
+  margin: 16px;
+  --background: #3880ff;  /* Set button background to primary color */
+  --color: #ffffff;  /* Set button text to white */
+}
+
+ion-card {
+  margin-top: 16px;
+  --background: #1c1c1c;  /* Set card background to dark grey */
+  --color: #ffffff;  /* Set card text to white */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ion-card-title {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+ion-card-subtitle {
+  font-size: 1em;
+  color: #999999;  /* Set subtitle text to light grey */
+}
+
+ion-card-content {
+  padding: 16px;
+}
+
+ion-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+p {
+  font-size: 0.9em;
+  color: #ffffff;  /* Set paragraph text to white */
+}
+
+a {
+  color: #3880ff;
+  text-decoration: none;
+}

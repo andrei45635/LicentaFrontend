@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Find Similar Songs
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Enter Song Name</ion-label>
+    <ion-input type="text" [(ngModel)]="query" (ionChange)="searchSongs()"></ion-input>
+  </ion-item>
+
+  <ion-list *ngIf="songs.length > 0">
+    <ion-item *ngFor="let song of songs" (click)="selectSong(song)">
+      <ion-avatar slot="start">
+        <img [src]="song.images.url">
+      </ion-avatar>
+      <ion-label>
+        {{ song.name }} by {{ song.artist }} - Album: {{ song.album }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="recommendSong()">Recommend!</ion-button>
+
+  <ion-card *ngIf="playlist">
+    <ion-card-header>
+      <ion-card-title>{{ playlist.name }}</ion-card-title>
+      <ion-card-subtitle>{{ playlist.description }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Playlist ID: {{ playlist.id }}</p>
+      <p>URI: <a [href]="'https://open.spotify.com/playlist/' + playlist.id" target="_blank">{{ playlist.uri }}</a></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

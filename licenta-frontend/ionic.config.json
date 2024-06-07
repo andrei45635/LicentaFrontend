@@ -1,0 +1,7 @@
+{
+  "name": "licenta-frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

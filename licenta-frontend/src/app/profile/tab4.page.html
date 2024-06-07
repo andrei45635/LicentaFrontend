@@ -1,0 +1,30 @@
+<ion-header [translucent]="false">
+  <ion-toolbar color="green">
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="profile-container">
+    <ion-avatar *ngIf="userProfile?.images?.[0]?.url">
+      <img src="{{ userProfile.images[0].url }}" alt="Profile Image">
+    </ion-avatar>
+
+    <div class="profile-details">
+      <ion-item lines="none">
+        <ion-label>Display Name:</ion-label>
+        <ion-text>{{ userProfile.username }}</ion-text>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Email:</ion-label>
+        <ion-text>{{ userProfile.email }}</ion-text>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Country Code:</ion-label>
+        <ion-text>{{ userProfile.country }}</ion-text>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>
