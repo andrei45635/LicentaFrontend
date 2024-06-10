@@ -2,10 +2,10 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab3Page } from './tab3.page';
+import { LibraryPage } from './library.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { Tab3PageRoutingModule } from './tab3-routing.module';
+import { Tab2PageRoutingModule } from './library-routing.module';
 import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
@@ -14,10 +14,10 @@ import {HttpClientModule} from "@angular/common/http";
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab3PageRoutingModule,
+    Tab2PageRoutingModule,
     HttpClientModule
   ],
   providers:[HttpClientModule],
-  declarations: [Tab3Page]
+  declarations: [LibraryPage]
 })
-export class Tab3PageModule {}
+export class Tab2PageModule {}

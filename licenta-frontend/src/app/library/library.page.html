@@ -14,7 +14,7 @@
   </ion-header>
 
   <ion-list>
-    <ion-item *ngFor="let playlist of playlists">
+    <ion-item *ngFor="let playlist of playlists" (click)="openPlaylist(playlist)">
       <ion-label>
         {{ playlist.name }}
       </ion-label>

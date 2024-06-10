@@ -5,10 +5,10 @@ import {UserService} from "../services/user.service";
 
 @Component({
   selector: 'app-tab4',
-  templateUrl: 'tab4.page.html',
-  styleUrls: ['tab4.page.scss']
+  templateUrl: 'profile.page.html',
+  styleUrls: ['profile.page.scss']
 })
-export class Tab4Page implements OnInit {
+export class ProfilePage implements OnInit {
   userProfile: UserProfile = {
     username: '',
     email: '',

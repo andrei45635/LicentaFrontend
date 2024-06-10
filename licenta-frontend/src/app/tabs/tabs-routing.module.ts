@@ -9,19 +9,23 @@ const routes: Routes = [
     children: [
       {
         path: 'similarity',
-        loadChildren: () => import('../similarity/tab1.module').then(m => m.Tab1PageModule)
+        loadChildren: () => import('../similarity/similarity.module').then(m => m.Tab1PageModule)
       },
       {
         path: 'library',
-        loadChildren: () => import('../library/tab2.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('../library/library.module').then(m => m.Tab2PageModule)
       },
       {
         path: 'emotions',
-        loadChildren: () => import('../emotions/tab3.module').then(m => m.Tab3PageModule)
+        loadChildren: () => import('../emotions/emotions-eng.module').then(m => m.Tab3PageModule)
+      },
+      {
+        path: 'emotions-ro',
+        loadChildren: () => import('../emotions-ro/emotions-ro.module').then(m => m.Tab3PageModule)
       },
       {
         path: 'profile',
-        loadChildren: () => import('../profile/tab4.module').then(m => m.Tab4PageModule)
+        loadChildren: () => import('../profile/profile.module').then(m => m.Tab4PageModule)
       },
       {
         path: '',

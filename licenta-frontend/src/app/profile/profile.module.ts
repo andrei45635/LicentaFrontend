@@ -2,10 +2,10 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab4Page } from './tab4.page';
+import { ProfilePage } from './profile.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { Tab4PageRoutingModule } from './tab4-routing.module';
+import { Tab4PageRoutingModule } from './profile-routing.module';
 import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
@@ -18,6 +18,6 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule
   ],
   providers:[],
-  declarations: [Tab4Page]
+  declarations: [ProfilePage]
 })
 export class Tab4PageModule {}

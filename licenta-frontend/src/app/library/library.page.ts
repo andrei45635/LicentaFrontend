@@ -3,11 +3,11 @@ import {SpotifyService} from "../services/spotify.service";
 
 @Component({
   selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  templateUrl: 'library.page.html',
+  styleUrls: ['library.page.scss']
 })
-export class Tab2Page implements OnInit {
-  playlists: any[] = [];  // Define a proper type for any
+export class LibraryPage implements OnInit {
+  playlists: any[] = [];
 
   constructor(private spotifyService: SpotifyService) {}
 
@@ -24,4 +24,8 @@ export class Tab2Page implements OnInit {
     });
   }
 
+  openPlaylist(playlist: any) {
+    const url = `https://open.spotify.com/playlist/${playlist.id}`;
+    window.open(url, '_blank');
+  }
 }

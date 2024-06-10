@@ -1,27 +1,40 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {PlaylistDTO} from "../interfaces/playlist";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
+import {LoadingController} from "@ionic/angular";
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  selector: 'app-emotions-ro',
+  templateUrl: './emotions-ro.component.html',
+  styleUrls: ['./emotions-ro.component.scss'],
 })
-export class Tab3Page {
+export class EmotionsRoComponent  implements OnInit {
+
   query: string = '';
   songs: any[] = [];
   foundSong: string[] = [];
   playlist: PlaylistDTO;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private loadingController: LoadingController) {
   }
 
-  searchSongs() {
+  async presentLoading(message: string) {
+    const loading = await this.loadingController.create({
+      message: message,
+      spinner: 'crescent'
+    });
+    await loading.present();
+    return loading;
+  }
+
+  async searchSongs() {
     if (this.query.length > 1) {
+      const loading = await this.presentLoading('Searching for songs...');
       this.getSongs(this.query).subscribe(data => {
         this.songs = data;
+        loading.dismiss();
         console.log('tracks', this.songs);
       });
     }
@@ -46,22 +59,28 @@ export class Tab3Page {
     this.songs = [];
   }
 
-  recommendSong() {
+  async recommendSong() {
+    const loading = await this.presentLoading('Please wait while we fetch your playlist!\n 🎵 Finding the perfect match for your mood... 🎵');
     console.log('Recommendations based on:', this.query, this.foundSong);
     this.postData(this.foundSong).subscribe(
       response => {
         console.log('Success!', response);
         this.playlist = response;
+        loading.dismiss();
       },
       error => {
         console.error('Error', error);
+        loading.dismiss();
       }
     );
 
   }
 
   postData(data: any): Observable<any> {
-    return this.http.post('http://localhost:5000/api/emotions/eng', {data: data});
+    return this.http.post('http://localhost:5000/api/emotions/ro', {data: data});
   }
-}
 
+  ngOnInit(): void {
+  }
+
+}

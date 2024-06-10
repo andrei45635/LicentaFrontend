@@ -2,10 +2,10 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab1Page } from './tab1.page';
+import { SimilarityPage } from './similarity.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { Tab1PageRoutingModule } from './similarity-routing.module';
 import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
@@ -18,6 +18,6 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule
   ],
   providers:[HttpClientModule],
-  declarations: [Tab1Page]
+  declarations: [SimilarityPage]
 })
 export class Tab1PageModule {}
